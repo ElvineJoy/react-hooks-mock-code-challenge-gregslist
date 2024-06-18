@@ -1,8 +1,7 @@
+import React from "react";
 import ListingCard from "./ListingCard";
 
-
-
-function ListingsContainer({listingItem}) {
+function ListingsContainer({listingItem, onDelete}) {
   
 
   return (
@@ -10,10 +9,10 @@ function ListingsContainer({listingItem}) {
       <ul className="cards">
         {listingItem.map((item) => 
             <ListingCard  
-                key={item.id} 
-                description={item.description} 
-                location={item.location}
-                image={item.image}/>)}
+                key={item.id}
+                item={item}
+                onDelete ={onDelete}
+                />)}
       </ul>
     </main>
   );
